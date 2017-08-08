@@ -1,54 +1,62 @@
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
+  <v-app light>
+    <v-navigation-drawer
+      persistent
+      v-model="drawer"
+    >
+      <v-list>
+        <v-list-tile
+          v-for="(item, i) in items"
+          :key="i"
+          value="true"
+        >
+          <v-list-tile-action>
+            <v-icon light v-html="item.icon"></v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar fixed class="teal lighten-3">
+      <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
+      <v-container fluid>
+        <v-slide-y-transition mode="out-in">
+          <v-layout column align-center>
+            <blockquote>
+              &#8220;First, solve the problem. Then, write the code.&#8221;
+              <footer>
+                <small>
+                  <em>&mdash;John Johnson</em>
+                </small>
+              </footer>
+            </blockquote>
+          </v-layout>
+        </v-slide-y-transition>
+      </v-container>
     </main>
-  </div>
+  </v-app>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    data () {
+      return {
+        drawer: true,
+        items: [
+          { icon: 'bubble_chart', title: 'Inspire' }
+        ],
+        title: 'Vuetify.js'
+      }
+    }
+  }
 </script>
 
-<style>
-body {
-  margin: 0;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
+<style lang="stylus">
+  @import './stylus/main'
 </style>
