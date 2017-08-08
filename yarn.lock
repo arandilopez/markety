@@ -1837,6 +1837,10 @@ detect-indent@^4.0.0:
   dependencies:
     repeating "^2.0.0"
 
+dexie@^2.0.0-beta:
+  version "2.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/dexie/-/dexie-2.0.0-beta.11.tgz#980dde73146b4c147af0f84165d3ad5be8e952dc"
+
 di@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/di/-/di-0.0.1.tgz#806649326ceaa7caa3306d75d985ea2748ba913c"
