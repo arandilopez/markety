@@ -102,10 +102,16 @@ var webpackConfig = merge(baseWebpackConfig, {
     ]),
     // service worker caching
     new SWPrecacheWebpackPlugin({
-      cacheId: 'my-vue-app',
+      cacheId: 'markety-app',
       filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
-      minify: true,
+      staticFileGlobs: [
+        'dist/**/*.{js,html,css}'
+      ],
+      runtimeCaching: [{
+        urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
+        handler: 'cacheFirst'
+      }],
+      minify: false,
       stripPrefix: 'dist/'
     })
   ]
