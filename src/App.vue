@@ -1,7 +1,7 @@
 <template>
   <v-app light>
     <v-navigation-drawer
-      persistent
+      temporary
       v-model="drawer"
     >
       <v-list>
@@ -9,6 +9,7 @@
           v-for="(item, i) in items"
           :key="i"
           value="true"
+          :to="item.action"
         >
           <v-list-tile-action>
             <v-icon light v-html="item.icon"></v-icon>
@@ -28,14 +29,7 @@
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
           <v-layout column align-center>
-            <blockquote>
-              &#8220;First, solve the problem. Then, write the code.&#8221;
-              <footer>
-                <small>
-                  <em>&mdash;John Johnson</em>
-                </small>
-              </footer>
-            </blockquote>
+            <router-view></router-view>
           </v-layout>
         </v-slide-y-transition>
       </v-container>
@@ -49,9 +43,9 @@
       return {
         drawer: true,
         items: [
-          { icon: 'bubble_chart', title: 'Inspire' }
+          { icon: 'bubble_chart', title: 'Mis Articulos', action: '/' }
         ],
-        title: 'Vuetify.js'
+        title: 'Markety'
       }
     }
   }
