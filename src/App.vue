@@ -12,7 +12,7 @@
           :to="item.action"
         >
           <v-list-tile-action>
-            <v-icon light v-html="item.icon"></v-icon>
+            <v-icon light v-html="item.icon" class="grey--text text--darken-2"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
@@ -43,7 +43,9 @@
       return {
         drawer: true,
         items: [
-          { icon: 'bubble_chart', title: 'Mis Articulos', action: '/' }
+          { icon: 'shopping_cart', title: 'Mis Articulos', action: '/' },
+          { icon: 'compare_arrows', title: 'Comparar', action: '#' },
+          { icon: 'info', title: 'Acerca de Markety', action: '#' }
         ],
         title: 'Markety'
       }
