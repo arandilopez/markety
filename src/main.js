@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import db from './datastore'
 import Vuetify from 'vuetify'
 
+Vue.prototype.$db = db
 Vue.use(Vuetify)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
