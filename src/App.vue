@@ -1,6 +1,6 @@
 <template>
   <v-app light>
-    <v-toolbar absolute class="teal white--text">
+    <v-toolbar fixed class="teal white--text">
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -12,13 +12,13 @@
           </v-flex>
         </v-layout>
       </v-slide-y-transition>
+      <v-bottom-nav fixed value="true" class="teal">
+        <v-btn flat dark v-for="(item, i) in items" :key="i" :to="item.action">
+          <span>{{ item.title }}</span>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-btn>
+      </v-bottom-nav>
     </main>
-    <v-bottom-nav fixed value="true" class="transparent">
-      <v-btn flat light class="teal--text" v-for="(item, i) in items" :key="i" :to="item.action">
-        <span>{{ item.title }}</span>
-        <v-icon class="teal--text">{{ item.icon }}</v-icon>
-      </v-btn>
-    </v-bottom-nav>
   </v-app>
 </template>
 

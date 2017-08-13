@@ -13,6 +13,18 @@ if (env !== 'production') {
       await db.shoppingCart.bulkAdd([
         {name: 'Tomatoes', price: 2},
         {name: 'Cereal', price: 10},
+        {name: 'Bananas', price: 4},
+        {name: 'Apples', price: 7},
+        {name: 'Onions', price: 2},
+        {name: 'Pinapple', price: 4},
+        {name: 'Garlics', price: 6},
+        {name: 'Milk', price: 5},
+        {name: 'Ham', price: 12},
+        {name: 'Cheese', price: 11},
+        {name: 'Hamburguers', price: 20},
+        {name: 'Chips', price: 2},
+        {name: 'Chocolate', price: 2},
+        {name: 'Books', price: 25},
         {name: 'Potatoes', price: 1}
       ])
     }
