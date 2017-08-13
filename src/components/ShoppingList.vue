@@ -5,20 +5,7 @@
         <div class="headline">Total: {{ total | currency }}</div>
       </v-card-title>
     </v-card>
-    <v-card class="item-list">
-      <v-list two-line>
-        <v-list-tile avatar ripple v-for="(item, index) in items" v-bind:key="item.id" tag="li">
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.name }}</v-list-tile-title>
-            <v-list-tile-sub-title>{{ item.price | currency }}</v-list-tile-sub-title>
-          </v-list-tile-content>
-          <v-list-tile-action @click="deleteItem(item, index)">
-            <v-icon class="red--text text--lighten-1">close</v-icon>
-          </v-list-tile-action>
-          <v-divider v-if="index + 1 < items.length"></v-divider>
-        </v-list-tile>
-      </v-list>
-    </v-card>
+    <item-list :items="items" @delete="deleteItem"></item-list>
     <v-btn fixed dark fab bottom right class="pink fab-button">
       <v-icon>add</v-icon>
     </v-btn>
@@ -27,6 +14,7 @@
 
 <script>
 import currency from '@/mixins/currency'
+import ItemList from './ShoppingList/ItemList'
 export default {
   name: 'shopping-list',
   mixins: [currency],
@@ -52,7 +40,8 @@ export default {
       await this.$db.shoppingCart.delete(item.id)
       this.items.splice(index, 1)
     }
-  }
+  },
+  components: {ItemList}
 }
 </script>
 
