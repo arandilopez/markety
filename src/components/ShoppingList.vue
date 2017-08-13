@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="shopping-list">
-    <v-card>
+    <v-card class="mt-2">
       <v-card-title primary-title>
         <div class="headline">Total: {{ total | currency }}</div>
       </v-card-title>
