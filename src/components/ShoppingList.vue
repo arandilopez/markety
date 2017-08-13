@@ -5,7 +5,6 @@
         <div class="headline">Total: {{ total | currency }}</div>
       </v-card-title>
     </v-card>
-
     <v-list two-line>
       <v-list-tile avatar ripple v-for="(item, index) in items" v-bind:key="item.title">
         <v-list-tile-content>

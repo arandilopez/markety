@@ -1,6 +1,6 @@
 <template>
   <v-app light>
-    <v-toolbar absolute class="teal lighten-3">
+    <v-toolbar absolute class="teal white--text">
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
