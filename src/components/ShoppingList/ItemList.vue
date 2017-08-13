@@ -21,8 +21,9 @@ export default {
   props: ['items'],
   mixins: [currency],
   methods: {
-    deleteItem (item, index) {
-      this.$emit('delete', item, index)
+    async deleteItem (item, index) {
+      await this.$db.shoppingCart.delete(item.id)
+      this.$emit('deleted-item')
     }
   }
 }
