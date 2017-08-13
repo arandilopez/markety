@@ -38,12 +38,17 @@ export default {
         await this.$db.shoppingCart.add(this.item)
         this.$emit('saved-item')
         this.dialog = false
+        this.clearItem()
       }
     },
 
     itemIsValid () {
       return !this._.isEmpty(this.item.name) &&
         (!this._.isEmpty(this.item.price) && this.item.price > 0)
+    },
+
+    clearItem () {
+      this.item = {name: '', price: ''}
     }
   }
 }
