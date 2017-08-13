@@ -4,16 +4,10 @@
       <v-card-title primary-title>
         <div class="headline">Total: {{ total | currency }}</div>
       </v-card-title>
-      <v-card-actions class="white">
-        <v-spacer></v-spacer>
-        <v-btn icon>
-          <v-icon>add</v-icon>
-        </v-btn>
-      </v-card-actions>
     </v-card>
-    <v-card style="margin-bottom: 60px; margin-top: 4px;">
+    <v-card class="item-list">
       <v-list two-line>
-        <v-list-tile avatar ripple v-for="(item, index) in items" v-bind:key="item.id">
+        <v-list-tile avatar ripple v-for="(item, index) in items" v-bind:key="item.id" tag="li">
           <v-list-tile-content>
             <v-list-tile-title>{{ item.name }}</v-list-tile-title>
             <v-list-tile-sub-title>{{ item.price | currency }}</v-list-tile-sub-title>
@@ -25,6 +19,9 @@
         </v-list-tile>
       </v-list>
     </v-card>
+    <v-btn fixed dark fab bottom right class="pink fab-button">
+      <v-icon>add</v-icon>
+    </v-btn>
   </div>
 </template>
 
@@ -60,4 +57,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.item-list {
+  margin-bottom: 96px;
+  margin-top: 4px;
+}
+
+.fab-button {
+  margin-bottom: 48px;
+}
 </style>
