@@ -27,9 +27,9 @@ export default {
   data () {
     return {
       items: [
-        { icon: 'shopping_cart', title: 'My list', action: '/' },
-        { icon: 'compare_arrows', title: 'Compare', action: '#' },
-        { icon: 'info', title: 'About', action: '#' }
+        { icon: 'shopping_cart', title: 'My cart', action: '/' },
+        { icon: 'compare_arrows', title: 'Compare', action: '/compare' },
+        { icon: 'info', title: 'About', action: '/about' }
       ],
       title: 'Markety'
     }
