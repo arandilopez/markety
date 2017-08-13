@@ -1,6 +1,6 @@
 <template lang="html">
   <v-dialog v-model="dialog" persistent>
-    <v-btn fixed dark fab bottom right class="pink fab-button" slot="activator">
+    <v-btn fixed dark fab bottom right class="pink mb-5" slot="activator">
       <v-icon>add</v-icon>
     </v-btn>
     <v-card>
@@ -50,7 +50,4 @@ export default {
 </script>
 
 <style lang="scss">
-.fab-button {
-  margin-bottom: 48px;
-}
 </style>

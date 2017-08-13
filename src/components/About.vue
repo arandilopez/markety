@@ -1,6 +1,6 @@
 <template lang="html">
 <div class="about">
-  <v-card style="margin-bottom: 48px;">
+  <v-card class="mb-5 mt-2">
     <v-card-text>
       <h3>About Markety</h3>
       <p>

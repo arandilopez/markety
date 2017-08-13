@@ -1,5 +1,5 @@
 <template lang="html">
-  <v-card class="item-list">
+  <v-card class="item-list mt-1">
     <v-list two-line>
       <v-list-tile avatar ripple v-for="(item, index) in items" v-bind:key="item.id" tag="li">
         <v-list-tile-content>
@@ -32,6 +32,5 @@ export default {
 <style lang="scss">
 .item-list {
   margin-bottom: 96px;
-  margin-top: 4px;
 }
 </style>
