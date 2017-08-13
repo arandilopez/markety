@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 div.float-button {
   position: fixed;
-  bottom: 72px;
+  bottom: 120px;
   right: 16px;
 }
 </style>

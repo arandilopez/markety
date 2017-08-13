@@ -1,19 +1,6 @@
 <template>
-  <v-app light toolbar--fixed toolbar>
-    <v-navigation-drawer temporary v-model="drawer">
-      <v-list>
-        <v-list-tile v-for="(item, i) in items" :key="i" value="true" :to="item.action">
-          <v-list-tile-action>
-            <v-icon light v-html="item.icon" class="grey--text text--darken-2"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+  <v-app light>
     <v-toolbar absolute class="teal lighten-3">
-      <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -26,6 +13,12 @@
         </v-layout>
       </v-slide-y-transition>
     </main>
+    <v-bottom-nav absolute value="true" class="transparent">
+      <v-btn flat light class="grey--text text-darken-2" v-for="(item, i) in items" :key="i" :to="item.action">
+        <span>{{ item.title }}</span>
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-btn>
+    </v-bottom-nav>
   </v-app>
 </template>
 
@@ -33,11 +26,10 @@
 export default {
   data () {
     return {
-      drawer: true,
       items: [
-        { icon: 'shopping_cart', title: 'Mis Articulos', action: '/' },
-        { icon: 'compare_arrows', title: 'Comparar', action: '#' },
-        { icon: 'info', title: 'Acerca de Markety', action: '#' }
+        { icon: 'shopping_cart', title: 'My list', action: '/' },
+        { icon: 'compare_arrows', title: 'Compare', action: '#' },
+        { icon: 'info', title: 'About', action: '#' }
       ],
       title: 'Markety'
     }
