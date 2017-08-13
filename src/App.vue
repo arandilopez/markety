@@ -13,10 +13,10 @@
         </v-layout>
       </v-slide-y-transition>
     </main>
-    <v-bottom-nav absolute value="true" class="transparent">
-      <v-btn flat light class="grey--text text-darken-2" v-for="(item, i) in items" :key="i" :to="item.action">
+    <v-bottom-nav fixed value="true" class="transparent">
+      <v-btn flat light class="teal--text" v-for="(item, i) in items" :key="i" :to="item.action">
         <span>{{ item.title }}</span>
-        <v-icon>{{ item.icon }}</v-icon>
+        <v-icon class="teal--text">{{ item.icon }}</v-icon>
       </v-btn>
     </v-bottom-nav>
   </v-app>
