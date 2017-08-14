@@ -1,4 +1,6 @@
-# markety
+![](static/img/icons/ic_launcher.png)
+
+# Markety
 
 > Products comparator
 
