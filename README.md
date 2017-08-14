@@ -2,7 +2,7 @@
 
 # Markety
 
-> Products comparator
+> Products comparator and a nice way to save money when shopping
 
 ## Build Setup
 
