@@ -9,7 +9,7 @@
       </v-card-title>
       <v-card-text>
         <v-text-field label="Name" v-model="item.name" required maxlength="50"></v-text-field>
-        <v-text-field label="Price" v-model="item.price" prefix="$" required></v-text-field>
+        <v-text-field type="number" label="Price" v-model="item.price" prefix="$" required></v-text-field>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
