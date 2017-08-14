@@ -10,12 +10,12 @@
       </p>
       <h4>License</h4>
       <p>
-        Markety is licensed under MIT License {{year}}
+        Markety is licensed under Apache-2.0 License
       </p>
       <p class="text-xs-center">
         <v-icon class="black--text">code</v-icon> with
         <v-icon class="pink--text">favorite</v-icon>
-        by <a href="https://arandilopez.me">Arandi López</a>
+        by <a href="https://arandilopez.me">Arandi López</a>, {{year}}
       </p>
     </v-card-text>
   </v-card>

@@ -1,9 +1,10 @@
 {
-  "name": "markety",
+  "name": "Markety",
   "version": "1.0.0",
   "description": "Products comparator",
   "author": "Arandi Lopez <arandilopez.93@gmail.com>",
   "private": true,
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
