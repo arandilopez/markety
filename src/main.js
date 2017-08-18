@@ -5,7 +5,7 @@ import 'webpack-material-design-icons'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import db from './datastore'
+import db from './db'
 import Vuetify from 'vuetify'
 const lodash = require('lodash')
 window._ = window.lodash = lodash

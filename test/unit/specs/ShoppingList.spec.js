@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { mount } from 'avoriaz'
 import ShoppingList from '@/components/ShoppingList'
-import db from '@/datastore'
+import db from '@/db'
 Vue.prototype.$db = db
 
 describe('ShoppingList.vue', () => {
