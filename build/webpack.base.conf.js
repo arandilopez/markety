@@ -9,7 +9,13 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    vendors: [
+      "vue",
+      "vuetify",
+      "webpack-material-design-icons",
+      "typeface-roboto"
+    ]
   },
   output: {
     path: config.build.assetsRoot,

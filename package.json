@@ -17,9 +17,11 @@
   "dependencies": {
     "dexie": "^2.0.0-beta",
     "lodash": "^4.17.4",
+    "typeface-roboto": "^0.0.35",
     "vue": "^2.3.3",
     "vue-router": "^2.3.1",
-    "vuetify": "^0.14.8"
+    "vuetify": "^0.14.8",
+    "webpack-material-design-icons": "^0.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
