@@ -105,12 +105,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       cacheId: 'markety-app',
       filename: 'service-worker.js',
       staticFileGlobs: [
-        'dist/**/*.{js,html,css}'
+        'dist/**/*.{js,html,css,woff,woff2,ttf}'
       ],
-      runtimeCaching: [{
-        urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
-        handler: 'cacheFirst'
-      }],
       minify: false,
       stripPrefix: 'dist/'
     })
