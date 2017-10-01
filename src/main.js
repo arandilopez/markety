@@ -5,6 +5,7 @@ import 'webpack-material-design-icons'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import db from './db'
 import Vuetify from 'vuetify'
 const lodash = require('lodash')
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

@@ -9,10 +9,13 @@
         <v-btn flat>
           Add new item
         </v-btn>
+        <v-btn flat>
+          Delete all
+        </v-btn>
         <v-menu offset-y>
           <v-btn flat slot="activator">Select unit: {{ unit }}</v-btn>
           <v-list>
-            <v-list-tile v-for="u in units" :key="u" tag="li" @click.native="unit = u">
+            <v-list-tile v-for="u in units" :key="u" tag="li" @click.native="setUnit(u)">
               <v-list-tile-title>{{ u }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
@@ -42,13 +45,13 @@
 <script>
 import currency from '@/mixins/currency'
 import quantity from '@/mixins/quantity'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'comparator',
   mixins: [currency, quantity],
   data () {
     return {
-      unit: 'KG',
       units: ['KG', 'GR', 'LT', 'ML', 'MTR', 'CM', 'PZ'],
       products: [
         {name: 'Suavitel', price: 38, units: 1000},
@@ -60,6 +63,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['unit']),
     items () {
       return this.products.sort((a, b) => {
         return this.pricePerUnit(a) - this.pricePerUnit(b)
@@ -70,6 +74,8 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['setUnit']),
+
     deleteItem (item, index) {
       console.log(item)
     },
