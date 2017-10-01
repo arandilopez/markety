@@ -6,8 +6,10 @@
           <v-list-tile-title>{{ item.name }}</v-list-tile-title>
           <v-list-tile-sub-title>{{ item.price | currency }}</v-list-tile-sub-title>
         </v-list-tile-content>
-        <v-list-tile-action @click="deleteItem(item, index)">
-          <v-icon class="red--text text--lighten-1">close</v-icon>
+        <v-list-tile-action>
+          <v-btn icon ripple @click="deleteItem(item, index)">
+            <v-icon class="red--text text--lighten-1">close</v-icon>
+          </v-btn>
         </v-list-tile-action>
       </v-list-tile>
     </v-list>
