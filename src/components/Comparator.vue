@@ -5,13 +5,7 @@
         <span class="headline">Best item is: {{betterItem.name}}</span>
       </v-card-title>
       <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn flat>
-          Add new item
-        </v-btn>
-        <v-btn flat>
-          Delete all
-        </v-btn>
+        <v-btn flat class="pink--text" @click="clearProducts()">clear product list</v-btn>
         <v-menu offset-y>
           <v-btn flat slot="activator">Select unit: {{ unit }}</v-btn>
           <v-list>
@@ -23,22 +17,8 @@
         <v-spacer></v-spacer>
       </v-card-actions>
     </v-card>
-    <v-card class="mb-5 mt-1">
-      <v-list three-line>
-        <v-list-tile ripple v-for="(item, index) in items" v-bind:key="item.id" tag="li">
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.name }} - {{pricePerUnit(item) | currency}} {{unit}}</v-list-tile-title>
-            <v-list-tile-sub-title>{{ item.price | currency }}</v-list-tile-sub-title>
-            <v-list-tile-sub-title>{{ item.units | qty_unit(unit) }}</v-list-tile-sub-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-btn icon ripple @click="deleteItem(item, index)">
-              <v-icon class="red--text text--lighten-1">close</v-icon>
-            </v-btn>
-          </v-list-tile-action>
-        </v-list-tile>
-      </v-list>
-    </v-card>
+    <product-list :items="products" :unit="unit" @deleted-product="loadProducts"></product-list>
+    <add-product-dialog @saved-product="loadProducts" :unit="unit"></add-product-dialog>
   </div>
 </template>
 
@@ -46,6 +26,8 @@
 import currency from '@/mixins/currency'
 import quantity from '@/mixins/quantity'
 import { mapState, mapActions } from 'vuex'
+import ProductList from './Comparator/ProductList'
+import AddProductDialog from './Comparator/AddProductDialog'
 
 export default {
   name: 'comparator',
@@ -53,14 +35,11 @@ export default {
   data () {
     return {
       units: ['KG', 'GR', 'LT', 'ML', 'MTR', 'CM', 'PZ'],
-      products: [
-        {name: 'Suavitel', price: 38, units: 1000},
-        {name: 'Ensueño', price: 39, units: 850},
-        {name: 'Downy', price: 100, units: 3000},
-        {name: 'El de aurrera', price: 180, units: 5000},
-        {name: 'Great Value', price: 120, units: 3000}
-      ]
+      products: []
     }
+  },
+  async created () {
+    await this.loadProducts()
   },
   computed: {
     ...mapState(['unit']),
@@ -70,7 +49,7 @@ export default {
       })
     },
     betterItem () {
-      return this.items[0]
+      return this.items[0] || {name: ''}
     }
   },
   methods: {
@@ -81,9 +60,19 @@ export default {
     },
 
     pricePerUnit (item) {
-      return (item.price / item.units)
+      return (item.price / item.quantity)
+    },
+
+    async loadProducts () {
+      this.products = await this.$db.comparables.toArray()
+    },
+
+    async clearProducts () {
+      await this.$db.comparables.clear()
+      this.products = []
     }
-  }
+  },
+  components: { ProductList, AddProductDialog }
 }
 </script>
 
