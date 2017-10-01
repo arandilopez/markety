@@ -4,6 +4,9 @@
       <v-card-title primary-title>
         <div class="headline">Total: {{ total | currency }}</div>
       </v-card-title>
+      <v-card-actions>
+        <v-btn flat class="pink--text" @click="clearShoppingCart()">Clear item list</v-btn>
+      </v-card-actions>
     </v-card>
     <item-list :items="items" @deleted-item="loadShoppingCart"></item-list>
     <add-item-dialog @saved-item="loadShoppingCart"></add-item-dialog>
@@ -34,6 +37,11 @@ export default {
   methods: {
     async loadShoppingCart () {
       this.items = await this.$db.shoppingCart.toArray()
+    },
+
+    async clearShoppingCart () {
+      await this.$db.shoppingCart.clear()
+      this.items = []
     }
   },
   components: {ItemList, AddItemDialog}

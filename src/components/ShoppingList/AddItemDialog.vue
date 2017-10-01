@@ -9,7 +9,8 @@
       </v-card-title>
       <v-card-text>
         <v-text-field label="Name" v-model="item.name" required maxlength="50"></v-text-field>
-        <v-text-field type="number" label="Price" v-model="item.price" prefix="$" required></v-text-field>
+        <v-text-field type="number" label="Units" v-model="item.units" required></v-text-field>
+        <v-text-field type="number" label="Price per unit" v-model="item.price" prefix="$" required></v-text-field>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -28,14 +29,17 @@ export default {
       dialog: false,
       item: {
         name: null,
-        price: null
+        price: null,
+        units: 1
       }
     }
   },
   methods: {
     async saveItem () {
       if (this.itemIsValid()) {
-        await this.$db.shoppingCart.add(this.item)
+        let item = _.clone(this.item)
+        item.price = (this.item.price * this.item.units)
+        await this.$db.shoppingCart.add(item)
         this.$emit('saved-item')
         this.dialog = false
         this.clearItem()
@@ -43,12 +47,12 @@ export default {
     },
 
     itemIsValid () {
-      return !this._.isEmpty(this.item.name) &&
-        (!this._.isEmpty(this.item.price) && this.item.price > 0)
+      return !_.isEmpty(this.item.name) &&
+        (!_.isEmpty(this.item.price) && this.item.price > 0 && this.item.units > 0)
     },
 
     clearItem () {
-      this.item = {name: '', price: ''}
+      this.item = {name: '', price: '', units: 1}
     }
   }
 }

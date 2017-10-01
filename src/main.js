@@ -8,9 +8,9 @@ import router from './router'
 import db from './datastore'
 import Vuetify from 'vuetify'
 const lodash = require('lodash')
+window._ = window.lodash = lodash
 
 Vue.prototype.$db = db
-Vue.prototype._ = lodash
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
