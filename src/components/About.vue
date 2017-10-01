@@ -15,7 +15,7 @@
       <p class="text-xs-center">
         <v-icon class="black--text">code</v-icon> with
         <v-icon class="pink--text">favorite</v-icon>
-        by <a href="https://arandilopez.me">Arandi López</a>, {{year}}
+        by <a href="https://arandilopez.me" target="_blank">Arandi López</a>, {{year}}
       </p>
     </v-card-text>
   </v-card>
