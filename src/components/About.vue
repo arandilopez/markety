@@ -5,12 +5,14 @@
       <h3>About Markety</h3>
       <h4>v{{ version }}</h4>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Markety is a web application that aims to help saving some dollars when you go to the super market, tracking the cost of all the items you add to your cart and comparing the price of different products against the content to find the best to save money.
       </p>
+      <!-- <p>
+        Markety es una aplicación web que busca ayudar en ahorrar algunos dolares cuando vayas al super mercado, llevando un seguimiento del costo de todos los articulos que añadas a tu carrito y comparando el precio de diferentes productos contra el contenido para encontrar el mejor para ahorrar dinero.
+      </p> -->
       <h4>License</h4>
-      <p>
-        Markety is licensed under Apache-2.0 License
-      </p>
+      <p>Markety is licensed under Apache-2.0 License. Markety it's a free and open source software and you can contribute tu make it better.</p>
+      <p>If you have a question or you want to contribute, visit the code repo at <a href="https://github.com/arandilopez/markety" target="_blank">Github</a>.</p>
       <p class="text-xs-center">
         <v-icon class="black--text">code</v-icon> with
         <v-icon class="pink--text">favorite</v-icon>
