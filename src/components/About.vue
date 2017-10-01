@@ -2,8 +2,7 @@
 <div class="about">
   <v-card class="mb-5 mt-2">
     <v-card-text>
-      <h3>About Markety</h3>
-      <h4>v{{ version }}</h4>
+      <h3>About Markety <small>v{{ version }}</small></h3>
       <p>
         Markety is a web application that aims to help saving some dollars when you go to the super market, tracking the cost of all the items you add to your cart and comparing the price of different products against the content to find the best to save money.
       </p>
