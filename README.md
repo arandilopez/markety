@@ -1,8 +1,10 @@
-![](static/img/icons/ic_launcher.png)
+[![](static/img/icons/ic_launcher.png)](https://markety.arandilopez.me/#/)
 
 # Markety
 
 > A progresive web application to track expenses and compare products prices when shopping
+
+Markety is a web application that aims to help saving some dollars when you go to the super market, tracking the cost of all the items you add to your cart and comparing the price of different products against the content to find the best to save money.
 
 ## Build Setup
 
